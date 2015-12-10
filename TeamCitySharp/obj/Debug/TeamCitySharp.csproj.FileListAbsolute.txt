@@ -8,6 +8,5 @@ C:\Code\GitHub\TeamCitySharp\src\TeamCitySharp\obj\Debug\TeamCitySharp.dll
 C:\Code\GitHub\TeamCitySharp\src\TeamCitySharp\obj\Debug\TeamCitySharp.pdb
 C:\Code\GitHub\build-reader\TeamCitySharp\bin\Debug\TeamCitySharp.dll
 C:\Code\GitHub\build-reader\TeamCitySharp\bin\Debug\TeamCitySharp.pdb
-C:\Code\GitHub\build-reader\TeamCitySharp\obj\Debug\TeamCitySharp.csprojResolveAssemblyReference.cache
 C:\Code\GitHub\build-reader\TeamCitySharp\obj\Debug\TeamCitySharp.dll
 C:\Code\GitHub\build-reader\TeamCitySharp\obj\Debug\TeamCitySharp.pdb

@@ -5,6 +5,24 @@ namespace InComm.BuildReader
 {
     public static class SharpMapper
     {
+        public static List<BuildConfig> ToBuildConfigList(
+            List<TeamCitySharp.DomainEntities.BuildConfig> sharpBuildConfigsList, TeamCityReader reader)
+        {
+            var buildConfigList = new List<BuildConfig>();
+            if (sharpBuildConfigsList == null)
+            {
+                return buildConfigList;
+            }
+
+            foreach (var sharpConfig in sharpBuildConfigsList)
+            {
+                var sharpBuilds = reader.GetBuildsByConfigId(sharpConfig.Id);
+                buildConfigList.Add(ToBuildConfig(sharpConfig, sharpBuilds));
+            }
+
+            return buildConfigList;
+        }
+
         public static BuildConfig ToBuildConfig(TeamCitySharp.DomainEntities.BuildConfig sharpConfig, List<TeamCitySharp.DomainEntities.Build> sharpBuildList)
         {
             return new BuildConfig
