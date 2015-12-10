@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87598714-132F-478E-866E-8C1AF3E83057}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeamCitySharp</RootNamespace>
+    <AssemblyName>TeamCitySharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EasyHttp, Version=1.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EasyHttp.1.6.1.0\lib\net40\EasyHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonFx">
+      <HintPath>..\..\packages\JsonFx.2.0.1209.2802\lib\net40\JsonFx.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionTypes\Agents.cs" />
+    <Compile Include="ActionTypes\BackupOptions.cs" />
+    <Compile Include="ActionTypes\BuildArtifacts.cs" />
+    <Compile Include="ActionTypes\BuildConfigs.cs" />
+    <Compile Include="ActionTypes\Builds.cs" />
+    <Compile Include="ActionTypes\Changes.cs" />
+    <Compile Include="ActionTypes\IAgents.cs" />
+    <Compile Include="ActionTypes\IBuildArtifacts.cs" />
+    <Compile Include="ActionTypes\IBuildConfigs.cs" />
+    <Compile Include="ActionTypes\IBuilds.cs" />
+    <Compile Include="ActionTypes\IChanges.cs" />
+    <Compile Include="ActionTypes\IProjects.cs" />
+    <Compile Include="ActionTypes\IServerInformation.cs" />
+    <Compile Include="ActionTypes\IUsers.cs" />
+    <Compile Include="ActionTypes\IVcsRoots.cs" />
+    <Compile Include="ActionTypes\Projects.cs" />
+    <Compile Include="ActionTypes\ServerInformation.cs" />
+    <Compile Include="Connection\ITeamCityCaller.cs" />
+    <Compile Include="TeamCityClient.cs" />
+    <Compile Include="ActionTypes\Users.cs" />
+    <Compile Include="ActionTypes\VcsRoots.cs" />
+    <Compile Include="DomainEntities\AgentRequirement.cs" />
+    <Compile Include="DomainEntities\AgentRequirements.cs" />
+    <Compile Include="DomainEntities\ArtifactDependencies.cs" />
+    <Compile Include="DomainEntities\ArtifactDependency.cs" />
+    <Compile Include="DomainEntities\BuildStep.cs" />
+    <Compile Include="DomainEntities\BuildSteps.cs" />
+    <Compile Include="DomainEntities\BuildTrigger.cs" />
+    <Compile Include="DomainEntities\BuildTriggers.cs" />
+    <Compile Include="DomainEntities\Parameters.cs" />
+    <Compile Include="DomainEntities\Properties.cs" />
+    <Compile Include="DomainEntities\Property.cs" />
+    <Compile Include="DomainEntities\SnapshotDependencies.cs" />
+    <Compile Include="DomainEntities\SnapshotDependency.cs" />
+    <Compile Include="DomainEntities\VcsRootEntries.cs" />
+    <Compile Include="DomainEntities\VcsRootEntry.cs" />
+    <Compile Include="DomainEntities\VcsRootField.cs" />
+    <Compile Include="Locators\BuildLocator.cs" />
+    <Compile Include="Locators\BuildTypeLocator.cs" />
+    <Compile Include="Connection\IClientConnection.cs" />
+    <Compile Include="Connection\TeamCityCaller.cs" />
+    <Compile Include="Connection\TeamCityDateFilter.cs" />
+    <Compile Include="Connection\TeamcityJsonEncoderDecoderConfiguration.cs" />
+    <Compile Include="DomainEntities\Agent.cs" />
+    <Compile Include="DomainEntities\AgentWrapper.cs" />
+    <Compile Include="DomainEntities\Build.cs" />
+    <Compile Include="DomainEntities\BuildConfig.cs" />
+    <Compile Include="DomainEntities\BuildTypeWrapper.cs" />
+    <Compile Include="DomainEntities\BuildWrapper.cs" />
+    <Compile Include="DomainEntities\Change.cs" />
+    <Compile Include="DomainEntities\ChangeWrapper.cs" />
+    <Compile Include="DomainEntities\Credentials.cs" />
+    <Compile Include="DomainEntities\File.cs" />
+    <Compile Include="DomainEntities\FileWrapper.cs" />
+    <Compile Include="DomainEntities\Group.cs" />
+    <Compile Include="DomainEntities\IBaseEntity.cs" />
+    <Compile Include="DomainEntities\Plugin.cs" />
+    <Compile Include="DomainEntities\PluginWrapper.cs" />
+    <Compile Include="DomainEntities\Project.cs" />
+    <Compile Include="DomainEntities\ProjectWrapper.cs" />
+    <Compile Include="DomainEntities\Role.cs" />
+    <Compile Include="DomainEntities\RoleWrapper.cs" />
+    <Compile Include="DomainEntities\Server.cs" />
+    <Compile Include="DomainEntities\User.cs" />
+    <Compile Include="DomainEntities\UserGroupWrapper.cs" />
+    <Compile Include="DomainEntities\UserWrapper.cs" />
+    <Compile Include="DomainEntities\VcsRoot.cs" />
+    <Compile Include="DomainEntities\VcsRootWrapper.cs" />
+    <Compile Include="ITeamCityClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Locators\UserLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
