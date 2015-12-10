@@ -32,6 +32,10 @@ namespace InComm.BuildReader
         {
             return TeamCity.Builds.ByBuildConfigId(buildConfigId);
         }
+        public List<TeamCitySharp.DomainEntities.Build> GetBuildsByUser(string userName)
+        {
+            return TeamCity.Builds.ByUserName(userName);
+        }
         public List<TeamCitySharp.DomainEntities.Build> GetBuildsSince(DateTime asOf)
         {
             return TeamCity.Builds.AllSinceDate(asOf);

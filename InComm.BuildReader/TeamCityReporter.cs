@@ -67,9 +67,10 @@ namespace InComm.BuildReader
         public void ShowUsers()
         {
             var users = _reader.GetUsers();
-            foreach (var user in users)
+            foreach (var sharpUser in users)
             {
-                _writer.Write(string.Format("User: {0}\t Username: {1}", user.Name, user.Username));
+                var user = SharpMapper.ToUser(sharpUser, _reader.GetBuildsByUser(sharpUser.Username));
+                _writer.Write(JsonConvert.SerializeObject(user));
             }
         }
 
