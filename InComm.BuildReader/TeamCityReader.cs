@@ -7,12 +7,17 @@ namespace InComm.BuildReader
 {
     public class TeamCityReader
     {
-        private const string TeamCityServerAddress = "10.20.30.205:8080";
+        private string TeamCityServerAddress { get; set; }
 
         private TeamCityClient _teamCity;
         public TeamCityClient TeamCity 
         {
             get { return _teamCity ?? (_teamCity = GetTeamCityClient()); }
+        }
+
+        public TeamCityReader(string teamCityServerAddress)
+        {
+            TeamCityServerAddress = teamCityServerAddress;
         }
 
         private TeamCityClient GetTeamCityClient()

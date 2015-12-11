@@ -7,21 +7,29 @@ namespace InComm.BuildReader
 {
     public class TeamCityReporter
     {
-        private TeamCityReader _reader;
-        private IWriter _writer;
+        private readonly TeamCityReader _reader;
+        private readonly IWriter _writer;
 
-        public TeamCityReporter() : this(new TeamCityReader(), new ConsoleWriter()) { }
         public TeamCityReporter(TeamCityReader reader, IWriter writer)
         {
-            _reader = reader ?? new TeamCityReader();
-            _writer = writer ?? new ConsoleWriter();
+            if (reader == null)
+            {
+                throw new ArgumentNullException("reader");
+            }
+            if (writer == null)
+            {
+                throw new ArgumentNullException("writer");
+            }
+
+            _reader = reader;
+            _writer = writer;
         }
 
         public void ShowAll()
         {
             //ShowBuildConfigs();
-            //ShowBuilds();
-            ShowUsers();
+            ShowBuilds();
+            //ShowUsers();
             //ShowUserBuilds("kevinfinck");
             //ShowUserBuilds("bryanjoseph");
             //ShowChanges();

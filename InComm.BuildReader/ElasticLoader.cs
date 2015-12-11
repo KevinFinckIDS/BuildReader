@@ -6,11 +6,23 @@ using Elasticsearch.Net.Connection;
 
 namespace InComm.BuildReader
 {
-    public static class ElasticLoader
+    public class ElasticLoader
     {
-        public static void UploadList<T>(List<T> list, string listName, string modelName)
+        private readonly string _elasticSearchAddress;
+
+        public ElasticLoader(string elasticSearchAddress)
         {
-            var node = new Uri("http://10.3.29.129:9200");
+            if (string.IsNullOrWhiteSpace(elasticSearchAddress))
+            {
+                throw new ArgumentNullException("elasticSearchAddress");
+            }
+
+            _elasticSearchAddress = elasticSearchAddress;
+        }
+
+        public void UploadList<T>(List<T> list, string listName, string modelName)
+        {
+            var node = new Uri(_elasticSearchAddress);
             var config = new ConnectionConfiguration(node);
             var client = new ElasticsearchClient(config);
 
