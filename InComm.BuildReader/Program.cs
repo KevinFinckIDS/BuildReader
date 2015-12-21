@@ -17,8 +17,8 @@ namespace InComm.BuildReader
 
         static void Main(string[] args)
         {
-            ShowTeamCityData();                 // This will just display build info from TeamCity
-            //UploadTeamCityToElasticsearch();  // This will upload to Elasticsearch 
+            //ShowTeamCityData();                 // This will just display build info from TeamCity
+            UploadTeamCityToElasticsearch();  // This will upload to Elasticsearch 
 
             Console.Write("Press [Enter] to exit.");
             Console.ReadLine();
@@ -36,7 +36,7 @@ namespace InComm.BuildReader
         {
             var reader = new TeamCityReader(TeamCityServerAddress);
             UploadBuildConfigs(reader);
-            UploadUsers(reader);
+            //UploadUsers(reader);
         }
 
         private static void UploadBuildConfigs(TeamCityReader reader)
@@ -50,7 +50,7 @@ namespace InComm.BuildReader
             Console.Write("Uploading {0} build configs...", configs.Count);
 
             new ElasticLoader(ElasticSearchAddress)
-                .UploadList(SharpMapper.ToBuildConfigList(configs, reader), "teamcity_buildconfigs", "BuildConfig");
+                .UploadList(SharpMapper.ToBuildConfigList(configs, reader), "teamcity_buildconfigs_2", "BuildConfig");
 
             Console.WriteLine();
         }
